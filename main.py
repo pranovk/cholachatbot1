@@ -74,7 +74,7 @@ async def policyQuery(WebSocket: Request):
 
 @app.on_event("startup")
 def startup_event():
-    file = open('/Users/pranovkumaran/Documents/CholaHugChat/Chola_policy_index/searchSuggestion.json', mode="rb")
+    file = open('./Chola_policy_index/searchSuggestion.json', mode="rb")
     bulk_data = json.loads(file.read().decode())
     data["suggestionList"] = bulk_data["suggestionList"]
     ss.batch_insert(bulk_data["suggestionList"])
@@ -82,9 +82,9 @@ def startup_event():
 
 @app.on_event("shutdown")
 def shutdowm_event():
-    with open('/Users/pranovkumaran/Documents/CholaHugChat/Chola_policy_index/searchSuggestion.json', 'w') as f:
+    with open('./Chola_policy_index/searchSuggestion.json', 'w') as f:
         f.write(json.dumps(data))
 
 
 if __name__ == "__main__":
-    run("main:app", host="127.0.0.1", port=9006, reload=True)
+    run("main:app", host="0.0.0.0", reload=True)
