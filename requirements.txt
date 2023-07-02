@@ -81,7 +81,6 @@ starlette
 tabulate
 tenacity
 texttable
-tiktoken
 tqdm
 typing-inspect
 typing_extensions
