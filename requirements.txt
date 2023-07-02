@@ -29,7 +29,6 @@ jmespath
 jose
 kafka-python
 langchain
-langchainplus-sdk
 llama-index
 logger
 logzio-python-handler
