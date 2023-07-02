@@ -11,8 +11,8 @@ from langchain.chat_models import ChatOpenAI
 logging.basicConfig(stream=sys.stdout, level=logging.WARN)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
-os.environ['OPENAI_API_KEY'] = "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"#"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"
-openai.api_key = os.getenv('OPENAI_API_KEY')
+# os.environ['OPENAI_API_KEY'] = "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"#"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"
+openai.api_key = os.getenv('OPENAI_API_KEY',"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")
 
 documents = SimpleDirectoryReader('data').load_data()
 
